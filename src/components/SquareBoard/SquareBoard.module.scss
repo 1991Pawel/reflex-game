@@ -1,0 +1,19 @@
+.square,
+.squareActive {
+  background: rgb(97, 95, 95);
+  border: 1px solid rgba(0, 0, 0, 0.288);
+  color: #fff;
+  height: 33.33%;
+  width: 33.33%;
+}
+
+.squareActive {
+  cursor: crosshair;
+  background: rgb(172, 50, 50);
+}
+
+.squareBoard {
+  height: 500px;
+  width: 500px;
+  background: #ccc;
+}
