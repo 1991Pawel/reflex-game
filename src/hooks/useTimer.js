@@ -19,5 +19,5 @@ export const useTimer = (initialValue, gameStatus) => {
     setTime((prev) => prev - 1);
   };
 
-  return { countDown, time };
+  return { countDown, time, setTime };
 };

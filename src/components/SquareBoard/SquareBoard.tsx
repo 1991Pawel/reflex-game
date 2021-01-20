@@ -1,6 +1,8 @@
 import React from 'react';
 // import { Square } from '../Square/Square';
 import styles from '../SquareBoard/SquareBoard.module.scss';
+import ground from '../../assets/ground.svg';
+import mole from '../../assets/mole.svg';
 
 export const SquareBoard = ({ randomNumber, hitCorrectSquareHandler }: any) => {
   const squares = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -16,7 +18,12 @@ export const SquareBoard = ({ randomNumber, hitCorrectSquareHandler }: any) => {
           key={square}
           disabled={Boolean(square !== randomNumber)}
         >
-          {square}
+          <span className={styles.mole}>
+            <img src={mole} />
+          </span>
+          <span className={styles.ground}>
+            <img src={ground} />
+          </span>
         </button>
       ))}
     </div>

@@ -1,19 +1,47 @@
 .square,
 .squareActive {
-  background: rgb(97, 95, 95);
-  border: 1px solid rgba(0, 0, 0, 0.288);
+  position: relative;
+  border: none;
   color: #fff;
   height: 33.33%;
   width: 33.33%;
+  overflow: hidden;
+  background: transparent;
 }
 
 .squareActive {
-  cursor: crosshair;
-  background: rgb(172, 50, 50);
+  .mole {
+    transform: translate(-50%, 0%);
+  }
 }
 
 .squareBoard {
+  margin: 5rem auto;
   height: 500px;
   width: 500px;
-  background: #ccc;
+}
+
+.mole {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  transition: 0.3s transform ease-in-out;
+
+  img {
+    height: 100px;
+    width: 100px;
+  }
+}
+.ground {
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translatex(-50%);
+
+  img {
+    height: auto;
+    width: 150px;
+    z-index: 2;
+  }
 }

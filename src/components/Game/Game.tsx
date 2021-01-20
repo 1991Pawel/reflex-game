@@ -15,16 +15,19 @@ export const Game = () => {
     hitCorrectSquareHandler,
   } = useGameContext();
   return (
-    <div className={styles.wrapper}>
-      <h1 className={styles.title}>Reflex Game</h1>
-      <Statistics />
-      <SquareBoard
-        randomNumber={randomNumber}
-        hitCorrectSquareHandler={hitCorrectSquareHandler}
-      />
-      <button onClick={() => setGameOn((prev) => !prev)}>
-        {gameOn ? 'Reset' : 'Start Game'}
-      </button>
+    <div className={styles.container}>
+      <div className={styles.wrapper}>
+        <h1 className={styles.title}>Reflex Game</h1>
+        <Statistics />
+        <SquareBoard
+          randomNumber={randomNumber}
+          hitCorrectSquareHandler={hitCorrectSquareHandler}
+        />
+
+        <button className={styles.startBtn} onClick={() => setGameOn(true)}>
+          start
+        </button>
+      </div>
     </div>
   );
 };

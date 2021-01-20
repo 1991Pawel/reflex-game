@@ -17,15 +17,15 @@ export const GameContext = createContext<GameConxtextProps | undefined>(
 );
 
 const GameProvider: React.FC = ({ children }) => {
-  const gameSpeed = 650;
   const [gameOn, setGameOn] = useState(false);
   const [squares] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9]);
-  const { time } = useTimer(5, gameOn);
+  const { time, setTime } = useTimer(30, gameOn);
   const [points, setPoints] = useState(0);
   const [randomNumber, setRandomNumber] = useState<number | null>();
+  const gameSpeed = 650;
 
   useEffect(() => {
-    if (gameOn) {
+    if (gameOn && time > 0) {
       const intervalId = setInterval(() => {
         getRandomSquare();
       }, gameSpeed);
@@ -33,7 +33,17 @@ const GameProvider: React.FC = ({ children }) => {
         clearInterval(intervalId);
       };
     }
-  }, [gameOn]);
+    if (!time) {
+      setGameOn(false);
+    }
+  }, [gameOn, time]);
+
+  const resetGame = () => {
+    setGameOn(false);
+    setPoints(0);
+    setRandomNumber(null);
+    setTime(5);
+  };
 
   const hitCorrectSquareHandler = (squareNumber: number) => {
     if (randomNumber === squareNumber) {
