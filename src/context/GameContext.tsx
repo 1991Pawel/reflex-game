@@ -19,7 +19,7 @@ export const GameContext = createContext<GameConxtextProps | undefined>(
 const GameProvider: React.FC = ({ children }) => {
   const [gameOn, setGameOn] = useState(false);
   const [squares] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9]);
-  const { time, setTime } = useTimer(30, gameOn);
+  const { time, setTime } = useTimer(180, gameOn);
   const [points, setPoints] = useState(0);
   const [randomNumber, setRandomNumber] = useState<number | null>();
   const gameSpeed = 650;

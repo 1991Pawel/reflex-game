@@ -12,6 +12,7 @@
 .squareActive {
   .mole {
     transform: translate(-50%, 0%);
+    opacity: 1;
   }
 }
 
@@ -19,29 +20,36 @@
   margin: 5rem auto;
   height: 500px;
   width: 500px;
+  background: #fbd836;
+  border-radius: 4px;
 }
 
 .mole {
   position: absolute;
-  bottom: 0;
+  bottom: 20%;
   left: 50%;
   transform: translate(-50%, 100%);
   transition: 0.3s transform ease-in-out;
+  z-index: 2;
+  opacity: 0;
 
   img {
     height: 100px;
     width: 100px;
   }
 }
-.ground {
+
+.donut {
   position: absolute;
-  bottom: -5px;
+  bottom: 0;
   left: 50%;
-  transform: translatex(-50%);
+  transform: translate(-50%, 50%);
+  z-index: 2;
+  background: #fbd836;
 
   img {
+    display: block;
     height: auto;
     width: 150px;
-    z-index: 2;
   }
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useReducer, useState } from 'react';
 import { Game } from './components/Game/Game';
 import GameProvider from './context/GameContext';
 
