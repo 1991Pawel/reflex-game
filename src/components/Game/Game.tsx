@@ -19,6 +19,7 @@ export const Game = () => {
       <div className={styles.wrapper}>
         <h1 className={styles.title}>Reflex Game</h1>
         <Statistics />
+
         <SquareBoard
           randomNumber={randomNumber}
           hitCorrectSquareHandler={hitCorrectSquareHandler}
