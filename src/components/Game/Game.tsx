@@ -16,8 +16,8 @@ export const Game = () => {
     resetGame,
   } = useGameContext();
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.container}>
+    <div className={styles.container}>
+      <div className={styles.wrapper}>
         {!time && (
           <div className={styles.modal}>
             <h3>Game Over</h3>
