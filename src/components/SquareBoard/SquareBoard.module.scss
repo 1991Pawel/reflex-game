@@ -7,6 +7,8 @@
   width: 33.33%;
   overflow: hidden;
   background: transparent;
+  outline: none;
+  cursor: crosshair;
 }
 
 .squareActive {
@@ -34,6 +36,12 @@
   img {
     height: 125px;
     width: 125px;
+    user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
   }
 }
 
@@ -49,5 +57,11 @@
     display: block;
     height: auto;
     width: 150px;
+    user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
   }
 }

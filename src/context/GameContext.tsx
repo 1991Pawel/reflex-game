@@ -10,6 +10,7 @@ type GameConxtextProps = {
   time: number;
   randomNumber: any;
   hitCorrectSquareHandler: any;
+  resetGame: any;
 };
 
 export const GameContext = createContext<GameConxtextProps | undefined>(
@@ -33,16 +34,13 @@ const GameProvider: React.FC = ({ children }) => {
         clearInterval(intervalId);
       };
     }
-    if (!time) {
-      setGameOn(false);
-    }
   }, [gameOn, time]);
 
   const resetGame = () => {
     setGameOn(false);
     setPoints(0);
     setRandomNumber(null);
-    setTime(5);
+    setTime(30);
   };
 
   const hitCorrectSquareHandler = (squareNumber: number) => {
@@ -67,6 +65,7 @@ const GameProvider: React.FC = ({ children }) => {
         time,
         randomNumber,
         hitCorrectSquareHandler,
+        resetGame,
       }}
     >
       {children}

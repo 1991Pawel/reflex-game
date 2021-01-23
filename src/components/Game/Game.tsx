@@ -13,21 +13,35 @@ export const Game = () => {
     time,
     randomNumber,
     hitCorrectSquareHandler,
+    resetGame,
   } = useGameContext();
   return (
-    <div className={styles.container}>
-      <div className={styles.wrapper}>
+    <div className={styles.wrapper}>
+      <div className={styles.container}>
+        {!time && (
+          <div className={styles.modal}>
+            <h3>Game Over</h3>
+            <p>your score : {points}</p>
+          </div>
+        )}
         <h1 className={styles.title}>Reflex Game</h1>
         <Statistics />
 
         <SquareBoard
           randomNumber={randomNumber}
           hitCorrectSquareHandler={hitCorrectSquareHandler}
+          time={time}
         />
 
-        <button className={styles.startBtn} onClick={() => setGameOn(true)}>
-          start
-        </button>
+        {gameOn ? (
+          <button className={styles.startBtn} onClick={resetGame}>
+            reset
+          </button>
+        ) : (
+          <button className={styles.startBtn} onClick={() => setGameOn(true)}>
+            start
+          </button>
+        )}
       </div>
     </div>
   );

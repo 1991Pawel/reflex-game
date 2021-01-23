@@ -1,7 +1,7 @@
 .container {
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
+  margin: 0 auto;
+  height: 100%;
+  width: 100%;
 }
 
 .wrapper {
@@ -25,4 +25,15 @@
   text-transform: uppercase;
   border: none;
   color: #fbd836;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 99;
+  padding: 2rem;
+  background: rgb(26, 25, 25);
+  color: #fbd836;
+  transform: translate(-50%, -50%);
 }

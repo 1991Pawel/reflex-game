@@ -4,7 +4,11 @@ import styles from '../SquareBoard/SquareBoard.module.scss';
 import ground from '../../assets/donut.png';
 import mole from '../../assets/4.webp';
 
-export const SquareBoard = ({ randomNumber, hitCorrectSquareHandler }: any) => {
+export const SquareBoard = ({
+  randomNumber,
+  hitCorrectSquareHandler,
+  time,
+}: any) => {
   const squares = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   return (
     <div className={styles.squareBoard}>
@@ -15,7 +19,7 @@ export const SquareBoard = ({ randomNumber, hitCorrectSquareHandler }: any) => {
             square === randomNumber ? styles.squareActive : styles.square
           }`}
           key={square}
-          disabled={Boolean(square !== randomNumber)}
+          disabled={time == 0}
         >
           <span className={styles.mole}>
             <img src={mole} />

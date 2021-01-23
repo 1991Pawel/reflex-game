@@ -7,7 +7,7 @@ export const Statistics = () => {
   return (
     <div className={styles.stats}>
       <span className={styles.points}>Points: {points}</span>
-      <span className={styles.time}>Time: {time} s</span>
+      <span className={styles.time}>Time: {time}</span>
     </div>
   );
 };
