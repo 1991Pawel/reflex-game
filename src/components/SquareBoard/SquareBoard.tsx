@@ -18,6 +18,7 @@ export const SquareBoard: React.FC = () => {
           square={square}
           time={time}
           randomNumber={randomNumber}
+          key={square}
         />
       ))}
     </div>

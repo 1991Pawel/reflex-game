@@ -6,7 +6,7 @@ import { Statistics } from '../Statistics/Statistics';
 import { useGameContext } from 'context/GameContext';
 
 export const Game: React.FC = () => {
-  const { gameOn, setGameOn, points, time, resetGame } = useGameContext();
+  const { gameOn, startGame, points, time, resetGame } = useGameContext();
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
@@ -19,7 +19,7 @@ export const Game: React.FC = () => {
             reset
           </button>
         ) : (
-          <button className={styles.btn} onClick={() => setGameOn(true)}>
+          <button className={styles.btn} onClick={startGame}>
             start
           </button>
         )}

@@ -10,6 +10,7 @@ type GameConxtextProps = {
   randomNumber: number | null;
   hitCorrectSquareHandler: (squareNumber: number) => void;
   resetGame: () => void;
+  startGame: () => void;
 };
 
 export const GameContext = createContext<GameConxtextProps | undefined>(
@@ -35,6 +36,9 @@ const GameProvider: React.FC = ({ children }) => {
     }
   }, [gameOn, time]);
 
+  const startGame = () => {
+    setGameOn(true);
+  };
   const resetGame = () => {
     setGameOn(false);
     setPoints(0);
@@ -58,6 +62,7 @@ const GameProvider: React.FC = ({ children }) => {
     <GameContext.Provider
       value={{
         gameOn,
+        startGame,
         setGameOn,
         points,
         squares,
