@@ -22,7 +22,7 @@ const GameProvider: React.FC = ({ children }) => {
   const { time, setTime } = useTimer(30, gameOn);
   const [points, setPoints] = useState(0);
   const [randomNumber, setRandomNumber] = useState<number | null>(null);
-  const gameSpeed = 350;
+  const gameSpeed = 550;
 
   useEffect(() => {
     if (gameOn && time > 0) {

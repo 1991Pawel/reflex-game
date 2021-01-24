@@ -15,11 +15,11 @@ export const Game: React.FC = () => {
         <Statistics />
         <SquareBoard />
         {gameOn ? (
-          <button className={styles.startBtn} onClick={resetGame}>
+          <button className={styles.btn} onClick={resetGame}>
             reset
           </button>
         ) : (
-          <button className={styles.startBtn} onClick={() => setGameOn(true)}>
+          <button className={styles.btn} onClick={() => setGameOn(true)}>
             start
           </button>
         )}

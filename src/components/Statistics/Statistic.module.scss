@@ -7,6 +7,9 @@
   width: 500px;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
+  @media (max-width: 600px) {
+    width: 300px;
+  }
 }
 .points,
 .time {

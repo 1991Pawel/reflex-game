@@ -17,7 +17,7 @@
   text-transform: uppercase;
 }
 
-.startBtn {
+.btn {
   cursor: pointer;
   display: block;
   background: #000;
@@ -26,5 +26,10 @@
   font-size: 1.3rem;
   text-transform: uppercase;
   border: none;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
   color: #fbd836;
+  @media (max-width: 600px) {
+    width: 300px;
+  }
 }

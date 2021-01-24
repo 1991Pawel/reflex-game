@@ -6,4 +6,9 @@
   width: 500px;
   background: #fbd836;
   border-radius: 4px;
+
+  @media (max-width: 600px) {
+    height: 300px;
+    width: 300px;
+  }
 }
