@@ -2,7 +2,7 @@ import React from 'react';
 import styles from '../Statistics/Statistic.module.scss';
 import { useGameContext } from 'context/GameContext';
 
-export const Statistics = () => {
+export const Statistics: React.FC = () => {
   const { time, points } = useGameContext();
   return (
     <div className={styles.stats}>

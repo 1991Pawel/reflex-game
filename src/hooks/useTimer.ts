@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
-export const useTimer = (initialValue, gameStatus) => {
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+export const useTimer = (initialValue: number, gameStatus: boolean) => {
   const [time, setTime] = useState(initialValue);
 
   useEffect(() => {

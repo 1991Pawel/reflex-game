@@ -1,0 +1,54 @@
+@mixin squareElement {
+  position: relative;
+  overflow: hidden;
+  border: none;
+  outline: none;
+  cursor: crosshair;
+  background: transparent;
+}
+
+.square {
+  @include squareElement();
+}
+
+.squareActive {
+  @include squareElement();
+
+  .homer {
+    transform: translate(-50%, 0%);
+    opacity: 1;
+  }
+}
+
+.homer {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  transition: 0.3s transform ease-in-out;
+  z-index: 2;
+
+  img {
+    height: 125px;
+    width: 125px;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+  }
+}
+
+.donut {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  z-index: 2;
+  background: #fbd836;
+
+  img {
+    display: block;
+    height: auto;
+    width: 150px;
+  }
+}

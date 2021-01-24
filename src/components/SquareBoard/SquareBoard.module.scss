@@ -1,67 +1,9 @@
-.square,
-.squareActive {
-  position: relative;
-  border: none;
-  color: #fff;
-  height: 33.33%;
-  width: 33.33%;
-  overflow: hidden;
-  background: transparent;
-  outline: none;
-  cursor: crosshair;
-}
-
-.squareActive {
-  .mole {
-    transform: translate(-50%, 0%);
-    opacity: 1;
-  }
-}
-
 .squareBoard {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto;
   height: 500px;
   width: 500px;
   background: #fbd836;
   border-radius: 4px;
-}
-
-.mole {
-  position: absolute;
-  bottom: 20%;
-  left: 50%;
-  transform: translate(-50%, 100%);
-  transition: 0.3s transform ease-in-out;
-  z-index: 2;
-
-  img {
-    height: 125px;
-    width: 125px;
-    user-drag: none;
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-drag: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-  }
-}
-
-.donut {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%, 50%);
-  z-index: 2;
-  background: #fbd836;
-
-  img {
-    display: block;
-    height: auto;
-    width: 150px;
-    user-drag: none;
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-drag: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-  }
 }

@@ -1,6 +1,5 @@
 import React, { useState, useContext, createContext, useEffect } from 'react';
 import { useTimer } from 'hooks/useTimer';
-import { count } from 'console';
 
 type GameConxtextProps = {
   setGameOn: React.Dispatch<React.SetStateAction<boolean>>;
@@ -8,9 +7,9 @@ type GameConxtextProps = {
   squares: number[];
   points: number;
   time: number;
-  randomNumber: any;
-  hitCorrectSquareHandler: any;
-  resetGame: any;
+  randomNumber: number | null;
+  hitCorrectSquareHandler: (squareNumber: number) => void;
+  resetGame: () => void;
 };
 
 export const GameContext = createContext<GameConxtextProps | undefined>(
@@ -22,8 +21,8 @@ const GameProvider: React.FC = ({ children }) => {
   const [squares] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9]);
   const { time, setTime } = useTimer(30, gameOn);
   const [points, setPoints] = useState(0);
-  const [randomNumber, setRandomNumber] = useState<number | null>();
-  const gameSpeed = 650;
+  const [randomNumber, setRandomNumber] = useState<number | null>(null);
+  const gameSpeed = 350;
 
   useEffect(() => {
     if (gameOn && time > 0) {

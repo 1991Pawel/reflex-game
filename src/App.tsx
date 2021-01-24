@@ -1,13 +1,11 @@
-import React, { useReducer, useState } from 'react';
+import React from 'react';
 import { Game } from './components/Game/Game';
 import GameProvider from './context/GameContext';
 
-function App() {
-  return (
-    <GameProvider>
-      <Game />
-    </GameProvider>
-  );
-}
+const App: React.FC = () => (
+  <GameProvider>
+    <Game />
+  </GameProvider>
+);
 
 export default App;
