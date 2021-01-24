@@ -2,13 +2,11 @@
 
 React/TS
 
+![image](https://i.ibb.co/xLbJKh2/rfg.jpg)
+
 # I learned:
 
 - How to create custom hooks.
-
-![image](https://i.ibb.co/xLbJKh2/rfg.jpg)
-
-
 
 
 # Installation
