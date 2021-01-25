@@ -26,7 +26,7 @@ const GameProvider: React.FC = ({ children }) => {
   const { time, setTime } = useTimer(30, gameOn);
   const [points, setPoints] = useState(0);
   const [randomNumber, setRandomNumber] = useState<number | null>(null);
-  const gameSpeed = 450;
+  const gameSpeed = 600;
   const [countDownMessage, setCountDownMessage] = useState(3);
 
   useEffect(() => {
