@@ -4,10 +4,12 @@ import { useTimer } from 'hooks/useTimer';
 type GameConxtextProps = {
   setGameOn: React.Dispatch<React.SetStateAction<boolean>>;
   gameOn: boolean;
+  getReady: boolean;
   squares: number[];
   points: number;
   time: number;
   randomNumber: number | null;
+  countDownMessage: number;
   hitCorrectSquareHandler: (squareNumber: number) => void;
   resetGame: () => void;
   startGame: () => void;
@@ -18,32 +20,49 @@ export const GameContext = createContext<GameConxtextProps | undefined>(
 );
 
 const GameProvider: React.FC = ({ children }) => {
+  const [getReady, setGetReady] = useState(false);
   const [gameOn, setGameOn] = useState(false);
   const [squares] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9]);
   const { time, setTime } = useTimer(30, gameOn);
   const [points, setPoints] = useState(0);
   const [randomNumber, setRandomNumber] = useState<number | null>(null);
-  const gameSpeed = 550;
+  const gameSpeed = 450;
+  const [countDownMessage, setCountDownMessage] = useState(3);
+
+  useEffect(() => {
+    if (countDownMessage === 0) {
+      setGameOn(true);
+      setGetReady(false);
+    }
+    if (getReady && countDownMessage > 0) {
+      const intervalId = setTimeout(() => {
+        setCountDownMessage((prev) => prev - 1);
+      }, 1000);
+
+      return () => clearInterval(intervalId);
+    }
+  }, [countDownMessage, getReady]);
 
   useEffect(() => {
     if (gameOn && time > 0) {
       const intervalId = setInterval(() => {
         getRandomSquare();
       }, gameSpeed);
-      return () => {
-        clearInterval(intervalId);
-      };
+
+      return () => clearInterval(intervalId);
     }
   }, [gameOn, time]);
 
   const startGame = () => {
-    setGameOn(true);
+    setGetReady(true);
   };
   const resetGame = () => {
+    setGetReady(false);
     setGameOn(false);
-    setPoints(0);
     setRandomNumber(null);
+    setPoints(0);
     setTime(30);
+    setCountDownMessage(3);
   };
 
   const hitCorrectSquareHandler = (squareNumber: number) => {
@@ -70,6 +89,8 @@ const GameProvider: React.FC = ({ children }) => {
         randomNumber,
         hitCorrectSquareHandler,
         resetGame,
+        countDownMessage,
+        getReady,
       }}
     >
       {children}
